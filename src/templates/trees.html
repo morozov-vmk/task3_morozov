@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Параметры модели</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Введите параметры модели</h1>
+    <form action="/set_parameters" method="post">
+        <label for="num_trees">Количество деревьев в ансамбле:</label>
+        <input type="number" name="num_trees" id="num_trees" value="40"><br>
+    
+        <label for="max_depth">Максимальная глубина дерева:</label>
+        <input type="number" name="max_depth" id="max_depth" value="7"><br>
+    
+        <label for="subsample_size">Размер подвыборки признаков для одного дерева:</label>
+        <input type="number" name="subsample_size" id="subsample_size" value="15"><br>
+    
+        <input type="submit" value="Далее">
+    </form>
+</body>
+</html>
