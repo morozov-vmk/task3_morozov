@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модель обучена</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Модель была успешно обучена</h1>
+    <p>{{ params }}</p>
+    <p>{{ data_info }}</p>
+
+    <a href="{{ url_for('view_loss_plot') }}">Посмотреть график потерь</a><p><a href="{{ url_for('download_file', filename='training_data.csv') }}">Скачать обучающую выборку</a></p>
+
+    <form method="post" action="{{ url_for('make_test_predictions') }}" enctype="multipart/form-data">
+        <h2>Предсказания на тестовой выборке</h2>
+        <p>Загрузите тестовую выборку и выполните предсказания.</p>
+        <input type="file" name="test_file" accept=".csv" required>
+        <input type="submit" value="Загрузить файл и предсказать">
+    </form>
+    
+    {% if predictions_file %}
+        <h3>Предсказания:</h3>
+        <p><a href="{{ url_for('download_file', filename=predictions_file.split('/')[-1]) }}">Скачать предсказания</a></p>
+    {% endif %}
+
+    {{ loss_plot | safe }}
+
+    <a href="{{ url_for('reset') }}">Сбросить и начать заново</a>
+</body>
+</html>
+

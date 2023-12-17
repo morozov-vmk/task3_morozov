@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор модели</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Выберите модель</h1>
+    </header>
+    <main>
+        <form action="/choose_model" method="post">
+            <label for="model">Модель:</label>
+            <select name="model" id="model">
+                <option value="Random Forest">Случайный лес</option>
+                <option value="Gradient Boosting">Градиентный бустинг</option>
+            </select>
+            <input type="submit" value="Далее">
+        </form>
+    </main>
+</body>
+</html>

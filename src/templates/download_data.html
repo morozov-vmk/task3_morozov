@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка данных</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Выберите и загрузите CSV файл с обучающей выборкой</h1>
+    <form action="/download_training_data" method="post" enctype="multipart/form-data">
+        <label for="training_file">Файл CSV:</label>
+        <input type="file" name="training_file" accept=".csv" required>
+        <input type="submit" value="Далее">
+    </form>
+</body>
+</html>

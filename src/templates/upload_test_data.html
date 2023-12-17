@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка тестовой выборки</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Выберите и загрузите CSV файл с тестовой выборкой</h1>
+        </div>
+        <div class="form-container">
+            <form action="/upload_test_data" method="post" enctype="multipart/form-data">
+                <label for="test_file">Файл CSV:</label>
+                <input type="file" name="test_file" accept=".csv">
+                <input type="submit" value="Далее">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

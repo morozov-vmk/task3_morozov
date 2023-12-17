@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ввод целевой переменной</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Введите название целевой переменной и нажмите "Обучить"</h1>
+    <form action="/train_model" method="post">
+        <label for="target_variable">Целевая переменная:</label>
+        <input type="text" name="target_variable" required>
+        <input type="submit" value="Обучить">
+    </form>
+</body>
+</html>

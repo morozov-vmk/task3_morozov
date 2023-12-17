@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сделать предсказание</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Сделать предсказание!</h1>
+    </header>
+    <main>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <label for="predict_file">Выберите файл для предсказаний:</label>
+            <input type="file" id="predict_file" name="predict_file" accept=".csv" required>
+            <button type="submit">Сделать предсказание</button>
+        </form>
+    </main>
+</body>
+</html>

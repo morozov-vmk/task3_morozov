@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Predictions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Predictions</h1>
+    <p>Here are the predictions:</p>
+    <ul>
+        {% if y_test_pred %}
+            {% for prediction in y_test_pred %}
+                <li>{{ prediction }}</li>
+            {% endfor %}
+        {% else %}
+            <p>No predictions available.</p>
+        {% endif %}
+    </ul>
+    <form action="{{ url_for('upload_test_data_after_training') }}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="test_file">Выберите файл с тестовой выборкой:</label>
+            <input type="file" class="form-control-file" name="test_file" id="test_file" accept=".csv" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Загрузить тестовую выборку и выполнить предсказания</button>
+    </form>
+    <form method="GET" action="{{ url_for('index') }}">
+        <button type="submit">Back to Model Trained</button>
+    </form>
+    
+</body>
+</html>

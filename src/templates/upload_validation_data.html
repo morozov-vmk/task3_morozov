@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка валидационной выборки</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Выберите и загрузите CSV файл с валидационной выборкой (по желанию)</h1>
+    <form action="/upload_validation_data" method="post" enctype="multipart/form-data">
+        <label for="validation_file">Файл CSV:</label>
+        <input type="file" name="validation_file" accept=".csv">
+        <input type="submit" value="Далее">
+    </form>
+</body>
+</html>

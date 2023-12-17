@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Loss Plot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {{ plot|safe }}
+
+    <div>
+        <h2>Predictions for X_test:</h2>
+        <p>{{ user_data['y_test_pred'] }}</p>
+    </div>
+</body>
+</html>
